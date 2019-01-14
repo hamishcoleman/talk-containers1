@@ -42,3 +42,8 @@ img {
     font-size: 100px;
 }
 
+.example {
+    font-size:30px;
+    background-color:black;
+    color:white
+}
