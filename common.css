@@ -52,3 +52,10 @@ img {
     font-size:20px;
     margin-bottom: 1em;
 }
+
+td, th {
+    border: solid 1px black;
+}
+table {
+    border-collapse: collapse;
+}
