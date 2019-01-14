@@ -140,6 +140,68 @@ debootstrap might sometimes be needed (or a workaround)
 ---
 # multistrap
 
+<pre class="example">
+sudo /usr/sbin/multistrap --arch amd64 \
+    -f multistrap.conf \
+    -d TARGETDIR
+</pre>
+
+???
+- stateless - can pickup where it left off
+- Harder to avoid running as root (fakeroot doesnt work as well here)
+- needs a postinstall script to properly complete installation
+- policy.d to avoid packages starting (multistrap runs the "real" package
+post install scripts
+- Foreign architecture is still fun
+
+--
+*NOTE:* it needs a config file!
+
+---
+# multistrap
+
+Config file ([multistrap.conf](example2/multistrap.conf))
+<pre class="example">
+[General]
+bootstrap=Stretch
+aptsources=Stretch
+
+[Stretch]
+source=http://httpredir.debian.org/debian
+suite=stretch
+keyring=debian-archive-keyring
+packages= systemd udev kmod apt
+</pre>
+
+???
+- Some lines left out for berevity - see the example2 folder in the repo for
+a complete set
+
+---
+# multistrap
+
+<div class="exampleref">
+    (See also the [example2](example2) files in the repo)
+</div>
+Install stage:
+<pre class="example">
+sudo /usr/sbin/multistrap --arch amd64 \
+    -f multistrap.conf \
+    -d /var/lib/container/example2
+</pre>
+<br>
+Configure stage: (sometimes optional)
+<pre class="example">
+chroot /var/lib/container/example2 dpkg --configure -a
+</pre>
+
+???
+- Installation does everything it can, up until it needs to run the install
+scripts
+- Configure is needed for foreign architectures, or more complex native ones
+- For clarity, the configure step has been significantly shortened.  See the
+example files (or just read the multistrap man page) for more details
+
 ---
 # Comparison
 
