@@ -60,7 +60,44 @@ Sysadmin Miniconf Linux.Conf.Au 2019 Christchurch
 - "Steve", around the back of the pub?
 
 ---
-# Builders
+# Why build your own?
+
+- The three R's:
+    - Repeatable
+    - Reliable
+    - Reproducible
+
+- Customise the default config to match your needs
+
+- Include special packages (Private builds or Specific versions)
+
+- Use one build that can be used for testing, QA, CI and Production
+
+- Build for new architectures
+
+---
+# What Options do I have?
+
+
+- debootstrap
+    - Used by the debian installer, implements all the package installation
+    internally, so only needs shell, wget and binutils to run
+
+- cdebootstrap
+    - A "C implementation of Debootstrap", with the same features
+
+- multistrap
+    - Uses the normal debian apt and dpkg tools.  Supports installing the
+    base system with packages from multiple repositories
+
+- vmdebootstrap
+    - Wrapper around debootstrap for building a virtual disk image for VMs
+
+- Many more!
+
+???
+- debootstrap can be used to install Debian from a completely different OS,
+without installing anything other than the debootstrap shell script
 
 ---
 # debootstrap
