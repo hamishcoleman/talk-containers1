@@ -20,6 +20,6 @@ sudo apt-get install debootstrap
 set -x
 sudo debootstrap --arch=amd64 \
     stretch \
-    /var/lib/container/example1 \
+    $TARGETDIR \
     http://httpredir.debian.org/debian
 
