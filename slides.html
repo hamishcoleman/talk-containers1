@@ -105,6 +105,38 @@ without installing anything other than the debootstrap shell script
 ---
 # debootstrap
 
+<pre class="example">
+sudo debootstrap --arch=amd64 \
+    SUITE \
+    TARGETDIR \
+    MIRROR
+</pre>
+
+???
+- Foreign architecture needs a second stage (--foreign and --second-stage)
+- It is possible to avoid root for much of the build, but that has its own
+complications (fakeroot permissions preservation, foreign arch emu)
+
+---
+# debootstrap
+
+<div class="exampleref">
+    (See also the [example1](example1) files in the repo)
+</div>
+<pre class="example">
+sudo debootstrap --arch=amd64 \
+    stretch \
+    /var/lib/container/example1 \
+    http://httpredir.debian.org/debian
+</pre>
+
+???
+- This will take some time
+- There are ways to cache the downloads and speed it up
+- The codenames for both debian and ubuntu are valid here, however a newer
+debootstrap might sometimes be needed (or a workaround)
+- Ubuntu would obviously have a different archive URL
+
 ---
 # multistrap
 
