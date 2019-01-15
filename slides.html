@@ -251,6 +251,7 @@ example files (or just read the multistrap man page) for more details
 - While debootstrap can be customised to do complex installs, I prefer the
 ability to use the multistrap config file
 - The config file also allows annotations and git commits to be clear
+- It is worth noting that multistrap installs less packages by default
 
 ---
 # Immediately Useful
@@ -272,7 +273,7 @@ exit
 - Testing the installation of new packages
 
 ---
-# But quite flawed
+# But not without issues
 
 <pre class="example">
 chroot /var/lib/container/example1
@@ -294,7 +295,7 @@ exit
 </pre>
 
 ---
-# But quite flawed
+# But not without issues
 
 <pre class="example">
 chroot /var/lib/container/example2
