@@ -252,11 +252,70 @@ example files (or just read the multistrap man page) for more details
 ability to use the multistrap config file
 - The config file also allows annotations and git commits to be clear
 
+---
+# Immediately Useful
+
+- The outputs of these tools can be used as is:
+
+<pre class="example">
+chroot /var/lib/container/example2
+dpkg -l
+exit
+</pre>
+
+--
+
+## Useful for
+
+- Clean build environments
+
+- Testing the installation of new packages
 
 ---
-# Output
+# But quite flawed
 
-- what you can use it for straight away
+<pre class="example">
+chroot /var/lib/container/example1
+perl -e 'print "hello world\n"'
+
+--
+ 
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+        LANGUAGE = (unset),
+        LC_ALL = (unset),
+        LC_COLLATE = "C",
+        LANG = "en_AU.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+hello world
+
+exit
+</pre>
+
+---
+# But quite flawed
+
+<pre class="example">
+chroot /var/lib/container/example2
+apt install less
+
+--
+
+Reading package lists... Done
+[..omitted..]
+Need to get 126 kB of archives.
+After this operation, 284 kB of additional disk space will be used.
+Err:1 http://httpredir.debian.org/debian stretch/main amd64 less amd64 481-2.1
+  Temporary failure resolving 'httpredir.debian.org'
+E: Failed to fetch http://httpredir.debian.org/debian/pool/main/l/less/less_481-2.1_amd64.deb  Temporary failure resolving 'httpredir.debian.org'
+E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?
+
+exit
+</pre>
+
+???
+- The chroot also has very little isolation from the rest of the system
 
 ---
 # Improvements
