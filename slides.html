@@ -347,7 +347,7 @@ These are changes that help the image to boot properly or remove (incorrect)
 identifying information - anything that could be considered "broken"
 
 <pre class="example">
-echo "template" >TARGETDIR/etc/hostname
+rm -f TARGETDIR/etc/hostname
 rm -f "TARGETDIR/etc/machine-id"
 rm -f TARGETDIR/etc/ssh/*_key
 echo "nameserver 1.1.1.1" > TARGETDIR/etc/resolv.conf
