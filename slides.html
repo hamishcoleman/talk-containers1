@@ -94,8 +94,9 @@ architecture that nobody else supports.
 
 
 - debootstrap
-    - Used by the debian installer, implements all the package installation
-    internally, so only needs shell, wget and binutils to run
+    - Used by the Ubuntu and Debian installers, implements all the
+    package installation internally, so only needs shell, wget and
+    binutils to run
 
 - cdebootstrap
     - A "C implementation of debootstrap", with the same features
@@ -112,9 +113,14 @@ architecture that nobody else supports.
 ???
 - debootstrap can be used to install Debian from a completely different OS,
 without installing anything other than the debootstrap shell script
-- I'm only going to look at two: debootstrap and multistrap
-    - debootstrap is the lowest common denominator
-    - multistrap is useful for foreign architecture or multi-repository cases
+- These four are all easily installable from the Debian and Ubuntu package
+repositories
+- There are other packaged options, and even more that are just someones
+project
+- I will go into more detail about two of these:
+    - debootstrap since it is the lowest common denominator
+    - multistrap because it is is useful for foreign architecture or
+    multi-repository cases
 
 ---
 # debootstrap
