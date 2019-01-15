@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 #
-TARGETDIR=/var/lib/container/example2
+TARGETDIR=/var/lib/container-example/example2
 
 if ! type apt-get >/dev/null; then
     echo ERROR: this script only runs on Debian-based systems

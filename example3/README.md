@@ -15,13 +15,13 @@ base directory as a commandline parameter.
 Thus, to run all the scripts on the example1:
 
 ```
-sudo demo_phase_fixup.sh /var/lib/container/example1
-sudo demo_phase_customise.sh /var/lib/container/example1
-sudo demo_phase_minimise.sh /var/lib/container/example1
+sudo demo_phase_fixup.sh /var/lib/container-example/example1
+sudo demo_phase_customise.sh /var/lib/container-example/example1
+sudo demo_phase_minimise.sh /var/lib/container-example/example1
 ```
 
 Finally, to instantiate a copy of a container:
 
 ```
-sudo demo_phase_instantiate.sh /var/lib/container/newhost newhostname
+sudo demo_phase_instantiate.sh /var/lib/container-example/newhost newhostname
 ```

@@ -10,9 +10,9 @@ The script requires a dpkg based distribution to work and should run with
 no issues on recent Debian or Ubuntu.
 
 Running the script will:
-- Confirm that the directory /var/lib/container/example1 does not exist
+- Confirm that the directory /var/lib/container-example/example1 does not exist
 - install any required packages
 - run the debootstrap command
 
 After successfully finishing, there will be a new base filesystem in the
-/var/lib/container/example1 directory
+/var/lib/container-example/example1 directory

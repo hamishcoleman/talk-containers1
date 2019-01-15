@@ -156,7 +156,7 @@ MIRROR is the package repository URL:
 <pre class="example">
 sudo debootstrap --arch=amd64 \
     stretch \
-    /var/lib/container/example1 \
+    /var/lib/container-example/example1 \
     http://httpredir.debian.org/debian
 </pre>
 
@@ -220,12 +220,12 @@ Install stage:
 <pre class="example">
 sudo /usr/sbin/multistrap --arch amd64 \
     -f multistrap.conf \
-    -d /var/lib/container/example2
+    -d /var/lib/container-example/example2
 </pre>
 <br>
 Configure stage: (sometimes optional)
 <pre class="example">
-chroot /var/lib/container/example2 dpkg --configure -a
+chroot /var/lib/container-example/example2 dpkg --configure -a
 </pre>
 
 ???
@@ -259,7 +259,7 @@ ability to use the multistrap config file
 - The outputs of these tools can be used as is:
 
 <pre class="example">
-chroot /var/lib/container/example2
+chroot /var/lib/container-example/example2
 dpkg -l
 exit
 </pre>
@@ -276,7 +276,7 @@ exit
 # But not without issues
 
 <pre class="example">
-chroot /var/lib/container/example1
+chroot /var/lib/container-example/example1
 perl -e 'print "hello world\n"'
 
 --
@@ -298,7 +298,7 @@ exit
 # But not without issues
 
 <pre class="example">
-chroot /var/lib/container/example2
+chroot /var/lib/container-example/example2
 apt install less
 
 --
