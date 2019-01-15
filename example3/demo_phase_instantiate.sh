@@ -29,5 +29,5 @@ echo "127.0.0.2 $HOSTNAME" >>"$TARGETDIR/etc/hosts"
 
 # If an ssh server is installed, ensure it has keys
 if [ -e "$TARGETDIR/etc/ssh/sshd_config" ]; then
-    chroot $TARGETDIR /usr/sbin/dpkg-reconfigure openssh-server
+    chroot "$TARGETDIR" /usr/sbin/dpkg-reconfigure openssh-server
 fi

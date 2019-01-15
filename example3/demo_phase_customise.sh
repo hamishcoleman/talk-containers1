@@ -20,10 +20,10 @@ TARGETDIR="$1"
 
 # Alternatively, mainly for demonstration purposes, generate a random password
 ROOT_PW=$(dd if=/dev/urandom bs=1 count=8 |sha256sum |cut -c1-8)
-echo INFO: root password generated is $ROOT_PW
+echo "INFO: root password generated is $ROOT_PW"
 
 # Set root to use that password
-echo root:$ROOT_PW | chpasswd -c SHA256 -R "$TARGETDIR"
+echo "root:$ROOT_PW" | chpasswd -c SHA256 -R "$TARGETDIR"
 
 # If your containerisation infrastructure needs specific network config, then
 # this would be where to set it:
