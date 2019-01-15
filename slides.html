@@ -194,19 +194,21 @@ post install scripts
 Config file ([multistrap.conf](example2/multistrap.conf))
 <pre class="example">
 [General]
-bootstrap=Stretch
-aptsources=Stretch
+bootstrap=NameOfSectionDefiningRepo
+aptsources=NameOfSectionDefiningRepo
 
-[Stretch]
-source=http://httpredir.debian.org/debian
-suite=stretch
-keyring=debian-archive-keyring
+[NameOfSectionDefiningRepo]
+source=MIRROR
+suite=SUITE
+keyring=debian-archive-keyring ubuntu-archive-keyring
 packages= systemd udev kmod apt
 </pre>
 
 ???
 - Some lines left out for berevity - see the example2 folder in the repo for
 a complete set
+- keyring defines a package name that needs to be installed on the host build
+system to allow the correct authentication of packages installed in the target
 
 ---
 # multistrap
