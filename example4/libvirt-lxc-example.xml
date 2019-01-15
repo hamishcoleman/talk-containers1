@@ -1,0 +1,31 @@
+<domain type='lxc'>
+  <name>newhost</name>
+  <memory unit='KiB'>200</memory>
+  <os>
+    <type arch='x86_64'>exe</type>
+    <init>/sbin/init</init>
+  </os>
+  <features>
+    <privnet/>
+  </features>
+  <clock offset='utc'/>
+  <on_poweroff>destroy</on_poweroff>
+  <on_reboot>restart</on_reboot>
+  <on_crash>destroy</on_crash>
+  <devices>
+    <emulator>/usr/lib/libvirt/libvirt_lxc</emulator>
+    <filesystem type='mount' accessmode='mapped'>
+      <source dir='/var/lib/container-example/newhost'/>
+      <target dir='/'/>
+    </filesystem>
+    <interface type='bridge'>
+      <source bridge='br0'/>
+      <guest dev='eth0'/>
+    </interface>
+    <console type='pty'>
+      <target type='lxc' port='0'/>
+      <alias name='console0'/>
+    </console>
+  </devices>
+</domain>
+

@@ -439,13 +439,14 @@ with `machinectl stop NAME`
 The nspawn command has lots of other options
 
 ---
-# Other ways to boot
+exclude: true
 
-- chroot
-- nspawn
-- libvirt
-- packing for qemu
-- uefi
+# Use libvirt to run the template with LXC
+
+See the example xml file
+
+virsh define
+virsh start
 
 ---
 # other useful projects
