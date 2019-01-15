@@ -320,8 +320,12 @@ exit
 ---
 # Improvements
 
+<div class="exampleref">
+    (See the <a href="example3">example3</a> files in the repo for scripts implementing these)
+</div>
+
 Building a reusable template:
-- fixups
+- fixup
 
 - customise
 
@@ -333,6 +337,25 @@ Turning a template into a specific machine:
 ???
 - I separate the post debootstrap changes into several categories, each with
 a specific purpose
+
+---
+# fixup
+
+These are changes that help the image to boot properly or remove (incorrect)
+identifying information - anything that could be considered "broken"
+
+<pre class="example">
+echo "template" >TARGETDIR/etc/hostname
+rm -f "TARGETDIR/etc/machine-id"
+rm -f TARGETDIR/etc/ssh/*_key
+echo "nameserver 1.1.1.1" > TARGETDIR/etc/resolv.conf
+</pre>
+
+???
+- however, not "networking", since the image will boot without that and
+your network setup is often custom to your environment.
+
+(segway)
 
 ---
 # Simple boot
