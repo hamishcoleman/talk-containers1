@@ -368,6 +368,12 @@ The changes needed for your local configuration
 echo root:hunter2 | chpasswd -c SHA256 -R TARGETDIR
 </pre>
 
+???
+In a non testing environment, this would often be a small list of bootstrap
+management users
+- which would then be used by your configuration automation tool to login and
+perform automated tasks
+
 ---
 # minimise
 
