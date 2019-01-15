@@ -25,7 +25,7 @@ HOSTNAME="$1"
 echo "$HOSTNAME" >"$TARGETDIR/etc/hostname"
 
 # Allow network tools within the container to always resolve the hostname
-echo "127.0.0.2 $HOSTNAME" >>"$TARGETDIR/etc/hosts"
+echo "127.0.1.1 $HOSTNAME" >>"$TARGETDIR/etc/hosts"
 
 # If an ssh server is installed, ensure it has keys
 if [ -e "$TARGETDIR/etc/ssh/sshd_config" ]; then
