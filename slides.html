@@ -411,6 +411,33 @@ chroot TARGETDIR dpkg-reconfigure openssh-server
 ---
 # Simple boot
 
+The systemd-nspawn tool provides a quick and no-fuss way to startup and test
+containers.
+
+<pre class="example">
+sudo systemd-nspawn --boot --ephemeral \
+    --directory=/var/lib/container-example/example2
+</pre>
+
+`--ephemeral` means that nspawn will copy the template dir and all changes will
+be lost when the container stops.
+
+???
+- if you dont have the systemd-nspawn, install it from the systemd-container
+package.
+
+(This command boots the container with networking shared with the host)
+
+--
+
+- login using the root password you set earlier
+
+- stop the container from inside with a `systemctl poweroff` or from the host
+with `machinectl stop NAME`
+
+???
+The nspawn command has lots of other options
+
 ---
 # Other ways to boot
 
