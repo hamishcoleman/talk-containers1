@@ -475,6 +475,25 @@ virsh start
 ???
 - Finish it all up with a page of links
 
+---
+# How do I do this for RPM based distros?
+
+From Debian or Ubuntu, this is a partially working recipe:
+
+<pre class="example">
+apt install rpm yum
+mkdir -p /var/lib/container-example/centos
+mkdir -p /var/lib/container-example/centos/var/lib/rpm
+rpm --rebuilddb \
+    --root=/var/lib/container-example/centos
+wget http://mirror.centos.org/centos/7/os/x86_64/Packages/centos-release-7-6.1810.2.el7.centos.x86_64.rpm
+rpm -i --root=/var/lib/container-example/centos \
+    --nodeps \
+    centos-release-7-6.1810.2.el7.centos.x86_64.rpm
+yum --installroot=/var/lib/container-example/centos \
+    install -y rpm-build yum --nogpgcheck
+</pre>
+
 <!-- End slides. -->
 
  </textarea>
