@@ -30,21 +30,25 @@ Sysadmin Miniconf Linux.Conf.Au 2019 Christchurch
 ---
 # What is a base image?
 
-- root filesystem
+- A root filesystem
 
-- template
+- Or a template for one
+
+- eg: Docker, Kubernetes and LXC all will use base image templates
 
 ???
 - Pretty much all operating systems have a root filesystem
 - It is the one place that the system expects to exist so it can boot up
-- Virtual Machines and Containers are no different
+- All other kinds of Thin VMs - Containers - are no different
+- The same for Thick VMs - Full System emulators - they have this root
+filesystem packed into their disk image
 
 --
-- not for "a single binary image"
+- Not used for "single binary image" containers
 
 ???
 - There are some container building efforts that build "single binary images"
-- I'm not talking about those today
+    - This talk is not touching on those
 
 --
 
