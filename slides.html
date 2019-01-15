@@ -369,6 +369,23 @@ echo root:hunter2 | chpasswd -c SHA256 -R TARGETDIR
 </pre>
 
 ---
+# minimise
+
+Size reductions on the image
+
+<pre class="example">
+rm -rf TARGETDIR/usr/share/locale/*
+rm -rf TARGETDIR/usr/share/doc/*
+rm -rf TARGETDIR/lib/udev/hwdb.bin
+</pre>
+
+???
+There is often quite a lot of extra space used on these images.  Since the
+base images are generally going to be used on automatically created container
+systems, there is a lot of documentation that can simply be removed to slim
+down the space used.
+
+---
 # Simple boot
 
 ---
