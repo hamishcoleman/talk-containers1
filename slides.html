@@ -225,7 +225,8 @@ sudo /usr/sbin/multistrap --arch amd64 \
 <br>
 Configure stage: (sometimes optional)
 <pre class="example">
-chroot /var/lib/container-example/example2 dpkg --configure -a
+chroot /var/lib/container-example/example2 \
+    dpkg --configure -a
 </pre>
 
 ???
