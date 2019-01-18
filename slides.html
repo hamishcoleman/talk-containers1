@@ -404,8 +404,8 @@ down the space used.
 
 - Some container systems take care of instantiation for you
 
-- If the end result is not a container system, you probably need to do it
-yourself.
+- If the end result is not a container infrastructure, you probably need to
+do it yourself.
 
 <pre class="example">
 echo realhostname >TARGETDIR/etc/hostname
@@ -447,14 +447,29 @@ with `machinectl stop NAME`
 The nspawn command has lots of other options
 
 ---
-exclude: true
+# Using libvirt + LXC
 
-# Use libvirt to run the template with LXC
+<div class="exampleref">
+    (See [example4](example4) in the repo)
+</div>
+<pre class="example">
+&amp;lt;domain type='lxc'>
+  &amp;lt;name>newhost&amp;lt;/name>
+  &amp;lt;memory unit='KiB'>200000&amp;lt;/memory>
+  &amp;lt;os>
+    &amp;lt;type arch='x86_64'>exe&amp;lt;/type>
+    &amp;lt;init>/sbin/init&amp;lt;/init>
+  &amp;lt;/os>
+...
+</pre>
 
-See the example xml file
+- <pre class="example">
+virsh -c lxc:/// define newhost.xml
+</pre>
+- <pre class="example">
+virsh start newhost
+</pre>
 
-virsh define
-virsh start
 
 ---
 # Turn the template dir into a VM disk image
