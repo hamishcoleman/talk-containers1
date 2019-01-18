@@ -5,13 +5,6 @@
     <type arch='x86_64'>exe</type>
     <init>/sbin/init</init>
   </os>
-  <features>
-    <privnet/>
-  </features>
-  <clock offset='utc'/>
-  <on_poweroff>destroy</on_poweroff>
-  <on_reboot>restart</on_reboot>
-  <on_crash>destroy</on_crash>
   <devices>
     <emulator>/usr/lib/libvirt/libvirt_lxc</emulator>
     <filesystem type='mount' accessmode='mapped'>
