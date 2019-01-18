@@ -30,6 +30,13 @@ echo "root:$ROOT_PW" | chpasswd -c SHA256 -R "$TARGETDIR"
 # echo "auto eth0" >/etc/network/interfaces.d/eth0
 # echo "iface eth0 inet dhcp" >>/etc/network/interfaces.d/eth0
 
+# For example, to use the networkd:
+chroot "$TARGETDIR" systemctl enable systemd-networkd
+
+# Using resolved with networkd is often desired
+chroot "$TARGETDIR" systemctl enable systemd-resolved
+echo "nameserver 127.0.0.53" > "$TARGETDIR/etc/resolv.conf"
+
 # Other settings that could go here:
 # - package repository proxy
 # - monitoring system config

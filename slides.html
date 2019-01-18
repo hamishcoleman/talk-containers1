@@ -367,13 +367,20 @@ The changes needed for your local configuration
 
 <pre class="example">
 echo root:hunter2 | sudo chpasswd -c SHA256 -R TARGETDIR
+chroot TARGETDIR systemctl enable systemd-networkd
+chroot TARGETDIR systemctl enable systemd-resolved
+echo "nameserver 127.0.0.53" > TARGETDIR/etc/resolv.conf
 </pre>
 
 ???
-In a non testing environment, this would often be a small list of bootstrap
+In a non testing environment, this would often have a small list of bootstrap
 management users
 - which would then be used by your configuration automation tool to login and
 perform automated tasks
+
+- yes, this overwrites the earlier resolv.conf fix
+- Additionally, the chroot can be avoided for foreign arch cases, but is used
+here for simplicity
 
 ---
 # minimise
