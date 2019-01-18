@@ -24,7 +24,6 @@
     </interface>
     <console type='pty'>
       <target type='lxc' port='0'/>
-      <alias name='console0'/>
     </console>
   </devices>
 </domain>
