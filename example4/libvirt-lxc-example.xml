@@ -1,6 +1,6 @@
 <domain type='lxc'>
   <name>newhost</name>
-  <memory unit='KiB'>200</memory>
+  <memory unit='KiB'>200000</memory>
   <os>
     <type arch='x86_64'>exe</type>
     <init>/sbin/init</init>
