@@ -18,9 +18,9 @@
       <source dir='/var/lib/container-example/newhost'/>
       <target dir='/'/>
     </filesystem>
-    <interface type='bridge'>
-      <source bridge='br0'/>
-      <guest dev='eth0'/>
+    <interface type='network'>
+      <source network='default'/>
+      <guest dev='host0'/>
     </interface>
     <console type='pty'>
       <target type='lxc' port='0'/>
