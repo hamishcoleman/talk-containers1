@@ -470,6 +470,9 @@ virsh -c lxc:/// define newhost.xml
 virsh start newhost
 </pre>
 
+???
+The XML in the repo is actually quite short, but it is still long to fit
+on this slide (see bonus slide)
 
 ---
 # Turn the template dir into a VM disk image
@@ -497,6 +500,33 @@ virsh start newhost
 <div class="right">Hamish Coleman - hamish@zot.org</div>
 ???
 - Finish it all up with a page of links
+
+---
+<div class="exampleref"> Can I see that libvirt config again?  </div>
+<pre class="example">
+&amp;lt;domain type='lxc'>
+  &amp;lt;name>newhost&amp;lt;/name>
+  &amp;lt;memory unit='KiB'>200000&amp;lt;/memory>
+  &amp;lt;os>
+    &amp;lt;type arch='x86_64'>exe&amp;lt;/type>
+    &amp;lt;init>/sbin/init&amp;lt;/init>
+  &amp;lt;/os>
+  &amp;lt;devices>
+    &amp;lt;emulator>/usr/lib/libvirt/libvirt_lxc&amp;lt;/emulator>
+    &amp;lt;filesystem type='mount' accessmode='mapped'>
+      &amp;lt;source dir='/var/lib/container-example/newhost'/>
+      &amp;lt;target dir='/'/>
+    &amp;lt;/filesystem>
+    &amp;lt;interface type='network'>
+      &amp;lt;source network='default'/>
+      &amp;lt;guest dev='host0'/>
+    &amp;lt;/interface>
+    &amp;lt;console type='pty'>
+      &amp;lt;target type='lxc' port='0'/>
+    &amp;lt;/console>
+  &amp;lt;/devices>
+&amp;lt;/domain>
+</pre>
 
 ---
 # How do I do this for RPM based distros?
