@@ -531,17 +531,18 @@ on this slide (see bonus slide)
 ---
 # How do I do this for RPM based distros?
 
-From Debian or Ubuntu, this is a partially working recipe:
+From Debian or Ubuntu, this is a starting point:
 
 <pre class="example">
 apt install rpm yum
-mkdir -p /var/lib/container-example/centos
-mkdir -p /var/lib/container-example/centos/var/lib/rpm
-rpm --rebuilddb \
-    --root=/var/lib/container-example/centos
+HOME= rpm --root=/var/lib/container-example/centos \
+    --initdb
+mkdir -p /var/lib/container-example/centos/var/lib
+mv /var/lib/container-example/centos/.rpmdb \
+    /var/lib/container-example/centos/var/lib/rpm
 wget http://mirror.centos.org/centos/7/os/x86_64/Packages/centos-release-7-6.1810.2.el7.centos.x86_64.rpm
-rpm -i --root=/var/lib/container-example/centos \
-    --nodeps \
+rpm --root=/var/lib/container-example/centos \
+    -i --nodeps \
     centos-release-7-6.1810.2.el7.centos.x86_64.rpm
 yum --installroot=/var/lib/container-example/centos \
     install -y rpm-build yum --nogpgcheck
