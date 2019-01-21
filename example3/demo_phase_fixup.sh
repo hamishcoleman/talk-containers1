@@ -18,15 +18,15 @@ TARGETDIR="$1"
 # copy the host system's hostname!)
 # Since we now have no hostname, we will inherit the hostname issued to us
 # by the container framework
-rm -f "$TARGETDIR/etc/hostname"
+shred -fu "$TARGETDIR/etc/hostname"
 
 # Remove any uniqe machine identifier
 # (systemd will create a new one on bootup)
-rm -f "$TARGETDIR/etc/machine-id"
+shred -fu "$TARGETDIR/etc/machine-id"
 
 # Remove any ssh keys - these should not be shared between systems
 # (if ssh is installed, the keys need to be regenerated on instantiation)
-rm -f "$TARGETDIR/etc/ssh"/*_key
+shred -fu "$TARGETDIR/etc/ssh"/*_key
 
 # Ensure that the image has a working resolver config
 echo "nameserver 1.1.1.1" > "$TARGETDIR/etc/resolv.conf"
