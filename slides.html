@@ -446,8 +446,9 @@ package.
 
 - login using the root password you set earlier
 
-- stop the container from inside with a `systemctl poweroff` or from the host
-with `machinectl stop NAME`
+- stop the container:
+  - from inside the guest with: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`systemctl poweroff`
+  - from outside on the host with: &nbsp;&nbsp;`machinectl stop name`
 
 ???
 The nspawn command has lots of other options
@@ -484,10 +485,15 @@ on this slide (see bonus slide)
 # Can also be used to build VM disk images
 
 - guestfish
+  - A library and toolset for automatically creating, partitioning,
+    formatting and populating VM disk images.
 
 - uefi booting
+  - Can be installed with the addition of a couple of extra files.
 
 - packing for qemu
+  - Making sure that the VM disk image is suitable for your virtualisation
+    platform.
 
 ---
 
