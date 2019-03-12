@@ -21,6 +21,7 @@ sudo demo_phase_minimise.sh /var/lib/container-example/example1
 ```
 
 Finally, to instantiate a copy of a container:
+- [demo_phase_instantiate.sh](demo_phase_instantiate.sh)
 
 ```
 sudo demo_phase_instantiate.sh /var/lib/container-example/newhost newhostname
