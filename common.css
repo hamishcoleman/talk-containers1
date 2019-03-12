@@ -1,13 +1,16 @@
   @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
-  @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
-  @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+  @import url(https://fonts.googleapis.com/css?family=B612:400,700,400italic);
+  @import url(https://fonts.googleapis.com/css?family=B612+Mono:400,700,400italic);
 
-  body { font-family: 'Droid Serif'; }
+  body {
+    font-family: 'B612';
+    font-weight: normal;
+  }
   h1, h2, h3 {
     font-family: 'Yanone Kaffeesatz';
     font-weight: normal;
   }
-  .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+  .remark-code, .remark-inline-code { font-family: 'B612 Mono'; }
 
 .footnote {
   position: absolute;
@@ -43,7 +46,8 @@ img {
 }
 
 .example {
-    font-size:30px;
+    font-family: 'B612 Mono';
+    font-size: 1.1em;
     background-color:black;
     color:#ccffcc;
 }
