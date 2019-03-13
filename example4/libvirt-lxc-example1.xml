@@ -1,5 +1,5 @@
 <domain type='lxc'>
-  <name>newhost</name>
+  <name>example1</name>
   <memory unit='KiB'>200000</memory>
   <os>
     <type arch='x86_64'>exe</type>
@@ -8,7 +8,7 @@
   <devices>
     <emulator>/usr/lib/libvirt/libvirt_lxc</emulator>
     <filesystem type='mount' accessmode='mapped'>
-      <source dir='/var/lib/container-example/newhost'/>
+      <source dir='/var/lib/container-example/example1'/>
       <target dir='/'/>
     </filesystem>
     <interface type='network'>
