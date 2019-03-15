@@ -22,6 +22,10 @@ sudo apt-get install multistrap
 SCRIPTDIR=$(dirname "$0")
 cd "$SCRIPTDIR"
 
+# Note:
+# - the multistrap package install process will start some services.  This can
+#   be avoided by using an appropriate /usr/sbin/policy-rc.d script
+
 set -x
 
 # First run the install stage
